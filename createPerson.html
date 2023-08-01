@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./createPerson.css">
+    <title>desafioJS</title>
+</head>
+
+<body>
+    <h1>Create Person</h1>
+    <form>
+        <label for="avatar">Avatar:</label>
+        <input type="text" id="avatar" name="avatar" required>
+
+        <label for="firstName">Nombre:</label>
+        <input type="text" id="firstName" name="firstName" required>
+
+        <label for="lastName">Apellido:</label>
+        <input type="text" id="lastName" name="lastName" required>
+
+        <label for="birthdate">Fecha de nacimiento:</label>
+        <input type="date" id="birthdate" name="birthdate" required>
+
+        <label>Género:</label>
+        <div class="radio-wrapper">
+            <div class="radio-control">
+                <label for="male">Masculino</label>
+                <input type="radio" id="male" name="gender" value="male" required>
+
+            </div>
+            <div class="radio-control">
+                <label for="female">Femenino</label>
+                <input type="radio" id="female" name="gender" value="female" required>
+            </div>
+
+
+        </div>
+
+
+        <label for="country">País:</label>
+        <select id="country" name="country" required>
+            <option value="">Selecciona un país</option>
+            <option value="argentina">Argentina</option>
+            <option value="brasil">Brasil</option>
+            <option value="colombia">Colombia</option>
+            <option value="mexico">México</option>
+        </select>
+
+        <label for="description">Descripción:</label>
+        <textarea id="description" name="description" rows="4" cols="50" required></textarea>
+
+        <span id="error-message" class="error-message"></span>
+
+        <button type="submit" id="send">Enviar</button>
+    </form>
+
+    <div id="card-wrapper" class="card-wrapper">
+
+    </div>
+
+    <script src="./createPerson.js"></script>
+</body>
+
+</html>

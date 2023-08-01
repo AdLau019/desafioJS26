@@ -1,0 +1,128 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #1F2127;
+    margin: 0;
+    padding: 20px;
+    height: 150vh;
+  }
+
+  h1 {
+    text-align: center;
+    color: white;
+  }
+
+  form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+
+  label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+  }
+
+  input[type="text"],
+  input[type="date"],
+  select,
+  textarea {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    margin-right: 5px;
+  }
+
+  button {
+    background-color: #4CAF50;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
+
+  .error-message {
+    color: red;
+    margin-top: 5px;
+  }
+
+  .exit{
+    background-color:red;
+    width: 40px;
+    border-radius: 9px;
+
+  }
+
+  .exit:hover{
+    background-color: rgba(240, 67, 67, 0.454);
+  }
+
+  .buttonexit{
+    width: 97%;
+    height: 40px;
+    display: flex;
+    justify-content: end;
+    
+  }
+
+  .radio-wrapper{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+  }
+  
+  .radio-control{
+    display: flex;
+    gap:1rem;
+    align-items: center;
+  }
+
+  .radio-control label{
+    margin: 0;
+  }
+
+.card-wrapper{
+  display: flex;
+  gap:1rem;
+  flex-wrap: wrap;
+  margin: 30px;
+}
+.card{
+  display: flex;
+  border: 5px solid white;
+  width: 30%;
+}
+
+.card-img{
+  width:40%;
+  object-fit: cover;
+  object-position: center;
+}
+.card-body{
+  padding: 1rem;
+}
+
+.card-content{    
+  color: white;
+}
+
+.button{
+  gap: 10px;
+}
