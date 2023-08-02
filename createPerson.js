@@ -68,23 +68,6 @@ const readData = async () => {
     }, []);
     console.log(cardsArray);
     printAllCards(cardsArray);
-
-    /*const infoCard = array.map((item) => {
-      console.log(item[0]);
-      const object = {
-        id: item[0],
-        birthdate: item[1].birthdate,
-        country: item[1].country,
-        description: item[1].description,
-        firstName: item[1].firstName,
-        gender: item[1].gender,
-        lastName: item[1].lastName,
-      };
-      return object;
-    });
-
-    console.log(infoCard);
-    buildCards(infoCard);*/
   }
 };
 readData();
@@ -123,6 +106,7 @@ const createPersonCard = (personData) => {
   } = personData;
   let card = document.createElement("div");
   card.className = "card";
+  card.id = "card_" + key;
 
   let imgProfile = document.createElement("img");
   imgProfile.className = "card-img";
@@ -166,12 +150,15 @@ const createPersonCard = (personData) => {
   editButton.innerText = "Editar";
 
   editButton.addEventListener("click", () => {
-    window.open(`editPerson.html?personId=${key}`, "_blank");
+    window.open(`editPerson.html?personId=${key}`, "_self");
   });
 
   let deleteButton = document.createElement("button");
   deleteButton.className = "button";
   deleteButton.innerText = "Eliminar";
+  deleteButton.addEventListener("click", () => {
+    deleteData(key);
+  });
 
   //Acomodar elementos
   buttonWrapper.append(editButton, deleteButton);
@@ -201,18 +188,15 @@ const printAllCards = (cardData) => {
 };
 
 //DELETE
-const deleteData = async (hash) => {
-  console.log(hash);
+
+const deleteData = async (key) => {
   const response = await fetch(
-    `https://datadf26-default-rtdb.firebaseio.comm/${hash}.json`,
+    "https://datadf26-default-rtdb.firebaseio.com/" + key + ".json",
     {
       method: "DELETE",
     }
   );
-
-  const data = await response.json();
-
-  console.log(data);
-
-  await readData();
+  document
+    .getElementById("card-wrapper")
+    .removeChild(document.getElementById("card_" + key));
 };
